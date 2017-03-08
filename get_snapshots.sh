@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#remove the previous files
+rm -f previous_traces current_traces snapshots bash_script_id stage_output
+
+#run the python script in background
+python3 get_thread_traces.py &
+
 pid=`pidof java`
 self_pid=$$
 echo $self_pid > bash_script_id
